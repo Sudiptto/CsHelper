@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title%} Chat {% endblock %}
+{% block content%}
+<h1 style="text-align:center; width: 100%;
+background-color: rgb(0, 14, 0);
+color: rgb(254, 243, 243);
+font-size: 30px;
+border-radius: 10px;">Global Chat</h1>
+{% for dataa in texts%}
+{% for data in User%}
+{% if data.id == dataa.user_id%}
+      <p style="text-align:center;">{{data.username}}: {{dataa.message}}</p>
+{% endif %}
+{% endfor %}
+{% endfor %}
+
+<form method="POST">
+    <textarea name="text" id="text" class="form-control"></textarea>
+    <br />
+    <div align="center">
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </div>
+  </form>
+
+{% endblock %}

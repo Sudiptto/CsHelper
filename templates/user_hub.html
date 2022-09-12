@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{% block title %}{{username}} {%endblock%}
+
+{% block content %} 
+
+    {% for dataa in User%}  
+        {% if username == dataa.username %} <!--LOOP THROUGH DATABASE ONCE IT FINDS USER DISPLAY POSTS-->
+        <div class="info">
+            <h1> Username <a style="font-family: 'Allura', cursive;">{{username}}</a></h1>
+            <h2>Name: {{dataa.first_name}} {{dataa.last_name}}</h2>
+            <h3># of Meets: {{dataa.meetss}}</h3>
+            <h3>Location: {{dataa.country}} </h3>
+        
+        </div>
+
+        {% endif %}
+    {% endfor %}
+{%endblock%}    

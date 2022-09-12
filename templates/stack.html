@@ -1,0 +1,25 @@
+{%extends 'base.html' %}
+{% block title %} Stack {% endblock %}
+{%block content%}
+<h1 style="text-align:center;  width: 100%;
+background-color: rgb(0, 14, 0);
+color: rgb(254, 243, 243);
+font-size: 30px;
+border-radius: 10px;"> Hi {{user.first_name}}! Want to explore stack overflow?</h1>
+<br /><br />
+
+<h1 style="text-align:center;">Questions with no answer! Be a friend and check them out!</h1>
+<table>
+  {% for question in items %}
+  {% if question.answer_count == 0%}
+  <tr>
+    <th id="left">{{question.title}}</th>
+
+
+    <th id="right"><a href={{question.link}} style="color: white;">{{question.link}}</a></th>
+
+  </tr>
+  {% endif %}
+  {% endfor %}
+</table>
+{% endblock%}

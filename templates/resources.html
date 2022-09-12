@@ -1,0 +1,34 @@
+
+{%extends 'base.html' %}
+{% block title %} Resources {% endblock %}
+{%block content%}
+<h1 style="text-align:center; width: 100%;
+background-color: rgb(0, 14, 0);
+color: rgb(254, 243, 243);
+font-size: 30px;
+border-radius: 10px;">Resources</h1>
+
+<div class="container" style="color: white; background-color:transparent;">
+    <div class="row">
+      <div class="col">
+        <h3 style="font-family: 'Barriecito', cursive;"> TutorialPoints </h3>
+        <a href="https://www.tutorialspoint.com/index.htm"><img src="{{ url_for('static', filename='Images/tp.png') }}" style="width: 80%;"></a>
+        <br />
+      </div>
+      <div class="col">
+        <h3 style="font-family: 'Barriecito', cursive;">W3 SCHOOLS</h3>
+        <a href="https://www.w3schools.com/"><img src="{{ url_for('static', filename='Images/w3.png') }}" style="width: 80%;"></a>
+      </div>
+      <div class="w-100"></div>
+      <div class="col">
+        <h3 style="font-family: 'Barriecito', cursive;">APP ACADEMY</h3>
+        <a href="https://www.appacademy.io/course/app-academy-open"><img src="{{ url_for('static', filename='Images/app.png') }}" style="width: 80%;"></a>
+      </div>
+      <div class="col">
+        <h3 style="font-family: 'Barriecito', cursive;">FREECODECAMP</h3>
+        <a href="https://www.freecodecamp.org/"><img src="{{ url_for('static', filename='Images/free.png') }}" style="width: 90%;"></a>
+    
+      </div>
+    </div>
+  </div>
+{% endblock%}

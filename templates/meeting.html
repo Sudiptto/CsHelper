@@ -1,0 +1,19 @@
+{% extends 'base.html'%} 
+
+{%block title%} Meeting {% endblock %}
+
+{% block content%}
+
+{% for dataa in event %}
+        <h1 style="text-align: center;">Title Of Meetup: {{dataa.title}}</h1>
+        <h2 style="text-align: center;">Description: {{dataa.data}}</h2>
+        <h3 style="text-align: center;">Organizer: {{dataa.firstName}} {{dataa.lastName}}</h3>
+        <h3 style="text-align: center;">Email: {{dataa.email}}</h3>
+        <h3 style="text-align: center;">State: {{dataa.state}} City: {{dataa.city}} Zip: {{dataa.zip}}</h3>
+        <h3 style="text-align: center;">Duration: {{dataa.duration}} hours</h3>
+        <h3 style="text-align: center;">Date: {{dataa.datetime}}</h3>
+        <h4 style="text-align: center;"><a href="{{ url_for('userrname', username=(user.query.get(dataa.user_id)).username) }}" style="color: white;">Username: {{(user.query.get(dataa.user_id)).username}}</a></h4>
+        <hr style="border-top: 8px solid #bbb;
+        border-radius: 5px">
+    {% endfor %}
+{% endblock %}
